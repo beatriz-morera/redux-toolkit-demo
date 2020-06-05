@@ -3,9 +3,9 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
-import App from './app';
-import store from './app/store';
-import theme, { GlobalStyle } from './app/theme';
+import App from './pages/app';
+import store from './store';
+import theme, { GlobalStyle } from './services/theme';
 
 import * as serviceWorker from './serviceWorker';
 

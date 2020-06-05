@@ -1,11 +1,11 @@
 import React, { Suspense, lazy } from 'react';
 import styled from 'styled-components';
 
-import Loading from './features/loading';
-import Header from './features/header';
-import Aside from './features/aside';
+import Loading from '../components/loading';
+import Header from '../components/header';
+import Aside from '../components/aside';
 
-const Citizens = lazy(() => import('./features/citizens'));
+const Citizens = lazy(() => import('../containers/citizens'));
 
 const Page = styled.div`
   height: 100vh;

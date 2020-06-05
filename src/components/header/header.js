@@ -3,15 +3,22 @@ import styled from 'styled-components';
 
 const Header = styled.header`
   background: ${({ theme }) => theme.primaryColor};
-  padding: 20px;
+  padding: 20px 30px;
   box-shadow: ${({ theme }) => theme.shadow};
   z-index: 1;
+  @media (max-width: 767px) {
+    padding: 20px 10px;
+  }
 `;
 const Title = styled.h1`
   font-size: 20px;
   font-weight: 400;
   margin: 0;
   text-transform: uppercase;
+
+  @media (max-width: 1023px) {
+    text-align: right;
+  }
 `;
 export default () => {
   return (

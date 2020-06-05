@@ -5,7 +5,7 @@ const Aside = styled.aside`
   display: none;
   @media (min-width: 1024px) {
     display: unset;
-    width: 15%;
+    width: 20%;
     background: ${({ theme }) => theme.backgroundColor2};
   }
 `;
