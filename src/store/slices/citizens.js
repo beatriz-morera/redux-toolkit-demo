@@ -9,10 +9,14 @@ const slice = createSlice({
     loading: false,
     error: null,
     term: '',
+    selected: null,
   },
   reducers: {
     filter: (state, action) => {
       state.term = action.payload;
+    },
+    select: (state, action) => {
+      state.selected = action.payload;
     },
   },
   extraReducers: {
@@ -31,7 +35,7 @@ const slice = createSlice({
   },
 });
 
-export const { filter } = slice.actions;
+export const { filter, select } = slice.actions;
 
 export const selectState = (store) => store.citizens;
 export const selectLoading = createSelector(selectState, (c) => c.loading);
@@ -49,5 +53,7 @@ export const selectFilteredCitizens = createSelector(
     return citizens.filter((c) => c.name.toLowerCase().includes(term.toLowerCase()));
   }
 );
+
+export const selectSelected = createSelector(selectState, (c) => c.selected);
 
 export default slice.reducer;

@@ -1,20 +1,23 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const rotate = keyframes`
+from{
+  transform: rotate(0deg);
+}
+to{
+  transform: rotate(360deg);
+}`;
 
 const Spinner = styled.div`
-height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
   display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-    -webkit-animation:spin 2s linear infinite;
-    -moz-animation:spin 2s linear infinite;
-    animation:spin 2s linear infinite;
-   
-}
-@-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
-@-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } 
+  animation: ${rotate} 2s linear infinite;
 `;
 
 export default () => {
@@ -29,8 +32,8 @@ export default () => {
           display: 'block',
           shapeRendering: 'auto',
         }}
-        width="200px"
-        height="200px"
+        width="150px"
+        height="150px"
         viewBox="0 0 100 100"
         preserveAspectRatio="xMidYMid"
       >

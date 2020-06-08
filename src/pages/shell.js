@@ -6,6 +6,7 @@ import Header from '../components/header';
 import Aside from '../components/aside';
 
 const Citizens = lazy(() => import('../containers/citizens'));
+const Detail = lazy(() => import('../containers/detail'));
 
 const Page = styled.div`
   height: 100vh;
@@ -27,6 +28,7 @@ export default () => {
           <Aside />
           <Citizens />
         </Container>
+        <Detail />
       </Page>
     </Suspense>
   );

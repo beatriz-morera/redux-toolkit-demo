@@ -1,14 +1,11 @@
 import styled, { css } from 'styled-components';
 
-export const Avatar = styled.div`
+import Avatar from '../avatar';
+
+export const CardAvatar = styled(Avatar)`
   width: 40px;
   height: 40px;
-  border-radius: 50%;
   margin-right: 10px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   img {
     width: 60px;
   }

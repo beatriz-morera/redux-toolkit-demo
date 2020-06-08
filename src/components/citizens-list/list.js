@@ -7,7 +7,7 @@ import { SearchNameBtn } from '../button';
 
 import { List, ListHeader, Section, Title, TitleSearchContainer, Input, Search } from './styled';
 
-export default ({ citizens, value, filterHandler, searchTermHandler }) => {
+export default ({ citizens, value, filterHandler, searchTermHandler, selectHandler }) => {
   return (
     <Section>
       <TitleSearchContainer>

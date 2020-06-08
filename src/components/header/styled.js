@@ -7,7 +7,6 @@ export const Header = styled.header`
   box-shadow: ${({ theme }) => theme.shadow};
   z-index: 1;
   @media (max-width: 1023px) {
-    padding: 20px 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;

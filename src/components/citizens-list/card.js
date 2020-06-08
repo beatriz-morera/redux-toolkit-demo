@@ -1,23 +1,31 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+
+import { select } from '../../store/slices/citizens';
 
 import Arrow from '../arrow';
 import Content from './content';
 import { SeeProfileBtn } from '../button';
 
-import { Avatar, ListCard } from './styled';
+import { CardAvatar, ListCard } from './styled';
 
 const Picture = ({ image, name }) => (
-  <Avatar>
+  <CardAvatar>
     <img src={image} alt={name} />
-  </Avatar>
+  </CardAvatar>
 );
 
-export default ({ citizen }) => (
-  <ListCard>
-    <Picture image={citizen.thumbnail} name={citizen.name} />
-    <Content {...citizen}>
-      <SeeProfileBtn hidden>See Profile</SeeProfileBtn>
-      <Arrow />
-    </Content>
-  </ListCard>
-);
+export default ({ citizen }) => {
+  const dispatch = useDispatch();
+  return (
+    <ListCard>
+      <Picture image={citizen.thumbnail} name={citizen.name} />
+      <Content {...citizen}>
+        <SeeProfileBtn hidden onClick={() => dispatch(select(citizen))}>
+          See Profile
+        </SeeProfileBtn>
+        <Arrow onClick={() => dispatch(select(citizen))} />
+      </Content>
+    </ListCard>
+  );
+};
