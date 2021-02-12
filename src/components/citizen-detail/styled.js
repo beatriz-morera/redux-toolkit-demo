@@ -23,6 +23,7 @@ export const Mask = styled.div`
 export const Drawer = styled.div`
   font-size: 15px;
   padding: 30px 40px;
+  min-width: 350px;
   width: 30%;
   background: ${({ theme }) => theme.backgroundColor2};
   box-shadow: -5px 0 10px -5px #1c2431;
@@ -95,13 +96,11 @@ export const SmallCardsContainer = styled.div`
 `;
 
 export const SmallCard = styled(Card)`
-  width: 120px;
+  width: 80px;
   margin: 30px 0;
-  padding: 15px;
+  padding: 10px;
   text-align: center;
-  @media (max-width: 700px) {
-    width: 60px;
-  }
+
 `;
 export const BigCard = styled(Card)`
   padding: 30px;

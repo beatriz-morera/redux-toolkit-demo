@@ -47,11 +47,11 @@ export default ({ name, thumbnail, age, weight, height, hair_color, professions,
           </SmallCard>
           <SmallCard>
             <label>Height</label>
-            <p>{height}</p>
+            <p>{Math.round(height)}</p>
           </SmallCard>
           <SmallCard>
             <label>Weight</label>
-            <p>{weight}</p>
+            <p>{Math.round(weight)}</p>
           </SmallCard>
         </SmallCardsContainer>
         {professions.length > 0 && (

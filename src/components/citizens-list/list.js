@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import { SearchOutlined } from '@ant-design/icons';
 
 import Content from './content';
@@ -7,7 +7,16 @@ import { SearchNameBtn } from '../button';
 
 import { List, ListHeader, Section, Title, TitleSearchContainer, Input, Search } from './styled';
 
-export default ({ citizens, value, filterHandler, searchTermHandler, selectHandler }) => {
+export default ({ citizens, value, filterHandler, searchTermHandler }) => {
+  const enterKeyHandler = useCallback(
+    (ev) => {
+     if(ev.keyCode === 13){
+       filterHandler && filterHandler()
+     }
+    },
+    [filterHandler],
+  )
+  
   return (
     <Section>
       <TitleSearchContainer>
@@ -15,7 +24,7 @@ export default ({ citizens, value, filterHandler, searchTermHandler, selectHandl
           Citizens <span>({citizens.length})</span>
         </Title>
         <Search>
-          <Input placeholder="Search by name" defaultValue={value} onChange={searchTermHandler} />
+          <Input placeholder="Search by name" defaultValue={value} onChange={searchTermHandler} onKeyDown={(ev) => enterKeyHandler(ev)}/>
           <SearchNameBtn onClick={filterHandler}>
             <SearchOutlined />
           </SearchNameBtn>

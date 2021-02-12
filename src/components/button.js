@@ -7,7 +7,7 @@ const hiddenStyle = css`
   }
 `;
 
-const Button = styled.button`
+export const Button = styled.button`
   border: none;
   outline: none;
   padding: 10px;
