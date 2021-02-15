@@ -7,14 +7,14 @@ function findMin(arr, property){
   if (arr.length === 0) {
     return undefined;
   }
-  return Math.min(...arr.map((item) => item[property]))
+  return Math.round(Math.min(...arr.map((item) => item[property])))
 }
 
 function findMax(arr, property){
   if (arr.length === 0) {
     return undefined;
   }
-  return Math.max(...arr.map((item) => item[property]))
+  return Math.round(Math.max(...arr.map((item) => item[property])))
 }
 
 const slice = createSlice({

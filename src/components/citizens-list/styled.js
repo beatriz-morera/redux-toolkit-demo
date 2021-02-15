@@ -89,6 +89,7 @@ export const TitleSearchContainer = styled.div`
     align-items: unset;
   }
 `;
+
 export const Search = styled.div`
   display: flex;
   align-items: center;
@@ -99,6 +100,7 @@ export const Search = styled.div`
     margin: 10px 0 30px 0;
   }
 `;
+
 export const Input = styled.input`
   border: none;
   outline: none;
@@ -110,4 +112,11 @@ export const Input = styled.input`
     flex: 1;
   }
   background: ${({ theme }) => theme.backgroundColor2};
+`;
+
+export const Flexbox = styled.span`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
 `;

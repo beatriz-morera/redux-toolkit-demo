@@ -5,6 +5,7 @@ import { ThemeProvider } from 'styled-components';
 
 import Shell from './pages/shell';
 import store from './store';
+import "./style.css"
 import theme, { GlobalStyle } from './services/theme';
 
 import * as serviceWorker from './serviceWorker';

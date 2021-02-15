@@ -40,13 +40,14 @@ export default () => {
           "maxWeight": Number(maxWeightState)
         }))
     }
+
   
   return (
   <Aside>
     <h2>Filters</h2>
-    <Filter name="Age" onMinChange={(value) => setMinAgeState(value)} onMaxChange={(value) => setMaxAgeState(value)} minValue={minAgeState} maxValue={maxAgeState}/>
-    <Filter name="Height" onMinChange={(value) => setMinHeightState(value)} onMaxChange={(value) => setMaxHeightState(value)} minValue={minHeightState} maxValue={maxHeightState}/>
-    <Filter name="Weight" onMinChange={(value) => setMinWeightState(value)} onMaxChange={(value) => setMaxWeightState(value)} minValue={minWeightState} maxValue={maxWeightState}/>
+    <Filter name="Age" onRangeChange={(value) => {setMinAgeState(value.min); setMaxAgeState(value.max)}} minValue={minAge} maxValue={maxAge} unity="years"/>
+    <Filter name="Height" onRangeChange={(value) => {setMinHeightState(value.min); setMaxHeightState(value.max)}} minValue={minHeight} maxValue={maxHeight} unity="cm"/>
+    <Filter name="Weight" onRangeChange={(value) => {setMinWeightState(value.min); setMaxWeightState(value.max)}} minValue={minWeight} maxValue={maxWeight} unity="kg"/>
     <br/>
     <SeeProfileBtn onClick={filterHandler}>
       Apply filters
