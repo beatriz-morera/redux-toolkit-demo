@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 
-import Shell from './pages/shell';
+import App from './App';
 import store from './store';
 import "./style.css"
 import theme, { GlobalStyle } from './services/theme';
@@ -15,7 +15,7 @@ ReactDOM.render(
     <ThemeProvider theme={theme}>
       <Provider store={store}>
         <GlobalStyle />
-        <Shell />
+        <App />
       </Provider>
     </ThemeProvider>
   </React.StrictMode>,
